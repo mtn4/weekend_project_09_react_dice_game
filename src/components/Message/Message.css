@@ -12,7 +12,7 @@
 }
 .overlay-content {
   position: relative;
-  top: 35%;
+  top: 25%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
@@ -21,4 +21,11 @@ h1 {
   color: lightyellow;
   font-size: 80px;
   text-shadow: 2px 2px #006eff;
+}
+@media screen and (max-width: 1000px) {
+  h1 {
+    color: lightyellow;
+    font-size: 50px;
+    text-shadow: 2px 2px #006eff;
+  }
 }

@@ -11,3 +11,10 @@
   border-radius: 10px;
   font-weight: 400;
 }
+@media screen and (max-width: 1000px) {
+  .round {
+    height: 60px;
+    width: 120px;
+    font-size: 14px;
+  }
+}

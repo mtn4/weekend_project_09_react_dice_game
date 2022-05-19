@@ -11,3 +11,11 @@
   border-radius: 10px;
   font-weight: 700;
 }
+
+@media screen and (max-width: 1000px) {
+  .total {
+    height: 80px;
+    width: 160px;
+    font-size: 20px;
+  }
+}

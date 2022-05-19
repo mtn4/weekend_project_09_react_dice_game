@@ -26,3 +26,10 @@
   background: url(../../assets/dice-6.png) no-repeat center center/cover;
   box-shadow: 0 5px #999;
 }
+
+@media screen and (max-width: 1000px) {
+  .dice {
+    height: 50px;
+    width: 50px;
+  }
+}

@@ -11,21 +11,32 @@ class LandingPage extends Component {
   };
   render() {
     return (
-      <div id="landing">
-        <div className="logo">Dice Game!</div>
-        <div className="landing-page__rules">
-          <span className="game-rules">Game Rules:</span>
-          <br />
-          The game has 2 players, playing in rounds. In each turn, a player
-          rolls 2 dices as many times as he wishes. Each result will get added
-          to his round’s score. But if the player rolls a double six all his
-          round’s score gets lost. After that, its the next player’s turn. A
-          player can choose to ‘Hold’, which means that his round’s score gets
-          added to his global score. After that, its the next players turn. The
-          first player to reach 100 points wins.
+      <>
+        <div style={{ display: "none" }} className="rotate">
+          <span>Please rotate the screen to play 🔥</span>
         </div>
-        <button className="btn" onClick={this.onClickLanding}></button>
-      </div>
+        <div id="landing">
+          <div className="logo">Dice Game!</div>
+          <div className="landing-page__rules">
+            <span className="game-rules">Game Rules:</span>
+            <br />
+            <br />
+            The game has 2 players, playing in rounds. <br />
+            In each turn, a player rolls 2 dices as many times as he wishes, at
+            least once. <br />
+            Each result will get added to his temporary score, but if the player
+            rolls a double six all his temporary score gets lost, and the turn
+            goes to the next player. <br />
+            The player can choose to ‘Hold’, which means that his temporary
+            score gets added to his global score. After that, its the next
+            players turn. <br />
+            Winner of the game: <br />
+            ● The first player to reach 100 points. <br />● The opposing player
+            passed 100 points in his total score.
+          </div>
+          <button className="btn" onClick={this.onClickLanding}></button>
+        </div>
+      </>
     );
   }
 }

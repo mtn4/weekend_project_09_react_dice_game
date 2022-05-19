@@ -8,7 +8,7 @@ class Player extends Component {
     return (
       <div id="player" className={`${this.props.turn}`}>
         <div className="top">
-          <h1>{this.props.name}</h1>
+          <p>{this.props.name}</p>
           <TotalScore value={this.props.totalScore} />
         </div>
         <RoundScore value={this.props.roundScore} />

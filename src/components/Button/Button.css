@@ -16,3 +16,10 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+@media screen and (max-width: 1000px) {
+  button {
+    height: 40px;
+    width: 80px;
+  }
+}
