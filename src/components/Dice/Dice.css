@@ -1,0 +1,28 @@
+.dice {
+  height: 100px;
+  width: 100px;
+}
+.dice-1 {
+  background: url(../../assets/dice-1.png) no-repeat center center/cover;
+  box-shadow: 0 5px #999;
+}
+.dice-2 {
+  background: url(../../assets/dice-2.png) no-repeat center center/cover;
+  box-shadow: 0 5px #999;
+}
+.dice-3 {
+  background: url(../../assets/dice-3.png) no-repeat center center/cover;
+  box-shadow: 0 5px #999;
+}
+.dice-4 {
+  background: url(../../assets/dice-4.png) no-repeat center center/cover;
+  box-shadow: 0 5px #999;
+}
+.dice-5 {
+  background: url(../../assets/dice-5.png) no-repeat center center/cover;
+  box-shadow: 0 5px #999;
+}
+.dice-6 {
+  background: url(../../assets/dice-6.png) no-repeat center center/cover;
+  box-shadow: 0 5px #999;
+}
