@@ -166,7 +166,14 @@ class GameBoard extends Component {
       };
     });
   };
-
+  componentDidMount() {
+    if (JSON.parse(localStorage.getItem("state"))) {
+      this.setState(JSON.parse(window.localStorage.getItem("state")));
+    }
+  }
+  componentDidUpdate() {
+    localStorage.setItem("state", JSON.stringify(this.state));
+  }
   render() {
     return (
       <>
