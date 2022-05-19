@@ -13,6 +13,7 @@ class Input extends Component {
           style={{
             visibility:
               `${this.props.visibility}` === "false" ? "visible" : "hidden",
+            width: `${this.props.width}` === "extra" ? 200 : "",
           }}
         />
       </>

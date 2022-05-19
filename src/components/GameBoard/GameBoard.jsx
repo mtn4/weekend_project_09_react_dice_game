@@ -10,7 +10,7 @@ class GameBoard extends Component {
   state = {
     targetScore: 100,
     diceArr: [0, 0],
-    turn: 0,
+    turn: Math.round(Math.random()),
     winner: "",
     gameStarted: false,
     gameFinished: false,
@@ -45,7 +45,7 @@ class GameBoard extends Component {
     this.setState({
       targetScore: 100,
       diceArr: [0, 0],
-      turn: 0,
+      turn: Math.round(Math.random()),
       winner: "",
       gameStarted: false,
       gameFinished: false,

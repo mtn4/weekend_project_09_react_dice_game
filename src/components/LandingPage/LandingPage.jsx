@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./LandingPage.css";
-
 class LandingPage extends Component {
   onClickLanding = (e) => {
     e.target.parentElement.style.opacity = "0%";
