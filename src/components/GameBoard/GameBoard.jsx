@@ -11,10 +11,7 @@ class GameBoard extends Component {
     targetScore: 100,
     diceArr: [0, 0],
     turn: Math.round(Math.random()),
-    winner: "",
     gameStarted: false,
-    gameFinished: false,
-    isDoubleSix: false,
     firstRoundScore: 0,
     secondRoundScore: 0,
     firstTotalScore: 0,
@@ -22,6 +19,7 @@ class GameBoard extends Component {
     message: "",
     disableBtn: false,
     rolledOnce: false,
+    totalWins: [0, 0],
   };
   handleInputChange = ({ target }) => {
     this.setState({ targetScore: target.value });
@@ -46,10 +44,7 @@ class GameBoard extends Component {
       targetScore: 100,
       diceArr: [0, 0],
       turn: Math.round(Math.random()),
-      winner: "",
       gameStarted: false,
-      gameFinished: false,
-      isDoubleSix: false,
       firstRoundScore: 0,
       secondRoundScore: 0,
       firstTotalScore: 0,
@@ -63,7 +58,12 @@ class GameBoard extends Component {
     }, 2500);
   };
   handleRoll = () => {
-    this.setState({ disableBtn: true, gameStarted: true, rolledOnce: true });
+    this.setState({
+      disableBtn: true,
+      gameStarted: true,
+      rolledOnce: true,
+      message: "",
+    });
     setTimeout(() => {
       const firstDice = Math.floor(Math.random() * 6) + 1;
       const secondDice = Math.floor(Math.random() * 6) + 1;
@@ -100,6 +100,7 @@ class GameBoard extends Component {
     ) {
       this.setState({
         message: "Congratulations! Player 1 wins!",
+        totalWins: [this.state.totalWins[0], this.state.totalWins[1] + 1],
       });
       setTimeout(() => {
         this.setState({ message: "" });
@@ -118,6 +119,7 @@ class GameBoard extends Component {
     ) {
       this.setState({
         message: "Congratulations! Player 0 wins!",
+        totalWins: [this.state.totalWins[0] + 1, this.state.totalWins[1]],
       });
       setTimeout(() => {
         this.setState({ message: "" });
@@ -136,12 +138,14 @@ class GameBoard extends Component {
           message: "Double Six! Player 1 round score will reset!",
           secondRoundScore: 0,
           turn: 0,
+          rolledOnce: false,
         };
       }
       return {
         message: "Double Six! Player 0 round score will reset!",
         firstRoundScore: 0,
         turn: 1,
+        rolledOnce: false,
       };
     });
     setTimeout(() => {
@@ -185,6 +189,7 @@ class GameBoard extends Component {
               turn={this.state.turn === 0 ? "current0" : ""}
               totalScore={this.state.firstTotalScore}
               roundScore={this.state.firstRoundScore}
+              totalWins={this.state.totalWins[0]}
             />
             <div className="btn-container">
               <Button name="New Game" onClick={this.handleClick} />
@@ -199,6 +204,7 @@ class GameBoard extends Component {
                 name="Hold"
                 onClick={this.handleClick}
                 visibility={this.state.rolledOnce}
+                disabled={!this.state.rolledOnce}
               />
               <Input
                 value={this.state.targetScore}
@@ -211,6 +217,7 @@ class GameBoard extends Component {
               turn={this.state.turn === 1 ? "current1" : ""}
               totalScore={this.state.secondTotalScore}
               roundScore={this.state.secondRoundScore}
+              totalWins={this.state.totalWins[1]}
             />
           </div>
         </div>
