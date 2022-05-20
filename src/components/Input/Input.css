@@ -11,5 +11,7 @@ input {
   input {
     height: 40px;
     width: 80px;
+    margin-bottom: 3px;
+    box-shadow: 0 3px #999;
   }
 }
