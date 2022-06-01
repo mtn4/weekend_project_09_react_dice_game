@@ -1,10 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Dice.css";
 
-class Dice extends Component {
-  render() {
-    return <div className={`dice dice-${this.props.result}`}></div>;
-  }
+export default function Dice(props) {
+  return <div className={`dice dice-${props.result}`}></div>;
 }
-
-export default Dice;
